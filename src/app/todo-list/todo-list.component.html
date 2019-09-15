@@ -1,0 +1,5 @@
+<h3>{{ listTitle }}</h3>
+
+<ul>
+    <todo-item *ngFor="let item of items" [label]="item.label"></todo-item>
+</ul>
