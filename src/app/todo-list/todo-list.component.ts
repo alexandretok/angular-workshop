@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-enum ItemStatus {
-  TODO,
-  DONE
+export enum ItemStatus {
+  TODO = 0,
+  DONE = 1
 }
 
 export interface Item {
@@ -37,7 +37,7 @@ export class TodoListComponent implements OnInit {
       {
         label: "Have breakfest",
         value: 1,
-        status: ItemStatus.TODO
+        status: ItemStatus.DONE
       },
       {
         label: "Make coffee",

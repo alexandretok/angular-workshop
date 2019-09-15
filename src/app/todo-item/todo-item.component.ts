@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Item } from '../todo-list/todo-list.component';
+import { Item, ItemStatus } from '../todo-list/todo-list.component';
 
 @Component({
   selector: 'todo-item',
@@ -10,4 +10,8 @@ export class TodoItemComponent {
   @Input('item') item: Item;
 
   constructor() { }
+
+  onChange(event) {
+    this.item.status = +event.target.checked;
+  }
 }
