@@ -4,10 +4,14 @@
 
 <button (click)="addItem()" [disabled]="items.length > 9">Add new item</button>
 
+<warning-message *ngIf="items.length > 9">
+  Maximum allowed items reached!
+</warning-message>
+
 <div style="margin-top: 10px;">
   Number of items: <strong>{{ items.length }}</strong>
 </div>
 
 <ul>
-  <todo-item *ngFor="let item of items" [label]="item.label"></todo-item>
+  <todo-item *ngFor="let item of items" [item]="item"></todo-item>
 </ul>

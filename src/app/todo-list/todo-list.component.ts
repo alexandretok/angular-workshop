@@ -5,7 +5,7 @@ enum ItemStatus {
   DONE
 }
 
-interface Item {
+export interface Item {
   label: string;
   value: number;
   status: ItemStatus

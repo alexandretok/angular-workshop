@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Item } from '../todo-list/todo-list.component';
 
 @Component({
   selector: 'todo-item',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent {
-  @Input('label') label: string;
+  @Input('item') item: Item;
 
   constructor() { }
 }
