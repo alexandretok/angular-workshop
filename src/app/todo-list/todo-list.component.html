@@ -1,6 +1,6 @@
 <h3>{{ listTitle }}</h3>
 
-<button (click)="addItem()">Add new item</button>
+<button (click)="addItem()" [disabled]="items.length > 9">Add new item</button>
 
 <div style="margin-top: 10px;">
     Number of items: <strong>{{ items.length }}</strong>
