@@ -17,19 +17,19 @@ interface Item {
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  items: Item[];
   listTitle: string = "Project Tasks";
+  items: Item[];
+  newItem: string;
 
-  constructor() {}
+  constructor() { }
 
   addItem() {
-    const newItem: Item = {
-      label: `Item #${this.items.length + 1}`,
+    this.items.push({
+      label: this.newItem,
       value: this.items.length + 1,
       status: ItemStatus.TODO
-    }
-
-    this.items.push(newItem);
+    });
+    this.newItem = "";
   }
 
   ngOnInit() {

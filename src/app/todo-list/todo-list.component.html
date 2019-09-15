@@ -1,11 +1,13 @@
 <h3>{{ listTitle }}</h3>
 
+<input type="text" [(ngModel)]="newItem">
+
 <button (click)="addItem()" [disabled]="items.length > 9">Add new item</button>
 
 <div style="margin-top: 10px;">
-    Number of items: <strong>{{ items.length }}</strong>
+  Number of items: <strong>{{ items.length }}</strong>
 </div>
 
 <ul>
-    <todo-item *ngFor="let item of items" [label]="item.label"></todo-item>
+  <todo-item *ngFor="let item of items" [label]="item.label"></todo-item>
 </ul>
