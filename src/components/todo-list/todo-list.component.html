@@ -1,8 +1,9 @@
 <h3>{{ listTitle }}</h3>
 
-<input type="text" [(ngModel)]="newItem">
-
-<button (click)="addItem()" [disabled]="items.length > 9">Add new item</button>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <input type="text" ngModel name="label">
+  <button type="submit" [disabled]="items.length > 9">Add new item</button>
+</form>
 
 <warning-message *ngIf="items.length > 9">
   Maximum allowed items reached!

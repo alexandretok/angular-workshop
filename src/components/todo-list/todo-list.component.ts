@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TodoService } from 'src/services/todo.service';
 import { ItemStatus } from 'src/models/item-status';
 import { Item } from 'src/models/item';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'todo-list',
@@ -16,13 +17,13 @@ export class TodoListComponent implements OnInit {
 
   constructor(public todoService: TodoService) {}
   
-  addItem() {
+  onSubmit(form: NgForm) {
     this.todoService.addItem({
-      label: this.newItem,
+      label: form.value.label,
       value: this.todoService.getItems().length + 1,
       status: ItemStatus.TODO
     });
-    this.newItem = "";
+    form.setValue({label: ""})
   }
   
   ngOnInit() {
