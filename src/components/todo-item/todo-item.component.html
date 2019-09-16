@@ -1,0 +1,6 @@
+<li [class.checked]="item.status == 'DONE'">
+  <label>
+    <input type="checkbox" [checked]="item.status == 'DONE'" (change)="onChange($event)">
+    {{ item.label }}
+  </label>
+</li>
