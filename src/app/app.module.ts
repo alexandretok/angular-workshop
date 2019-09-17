@@ -9,6 +9,7 @@ import { TodoListComponent } from 'src/components/todo-list/todo-list.component'
 import { WarningMessageComponent } from 'src/components/warning-message/warning-message.component';
 import { TodoPageComponent } from 'src/pages/todo-page/todo-page.component';
 import { ArchivePageComponent } from 'src/pages/archive-page/archive-page.component';
+import { OtherPageComponent } from 'src/pages/other-page/other-page.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,10 @@ const routes: Routes = [
     path: 'archive',
     component: ArchivePageComponent
   },
-
+  {
+    path: 'other',
+    component: OtherPageComponent
+  }
 ];
 
 @NgModule({
@@ -34,7 +38,8 @@ const routes: Routes = [
     TodoListComponent,
     WarningMessageComponent,
     TodoPageComponent,
-    ArchivePageComponent
+    ArchivePageComponent,
+    OtherPageComponent
   ],
   imports: [
     BrowserModule,
