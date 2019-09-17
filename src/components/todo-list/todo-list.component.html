@@ -1,20 +1,21 @@
 <h3>{{ listTitle }}</h3>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="label">
-  <button type="submit" [disabled]="items.length > 9 || !form.valid">Add new item</button>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Label" formControlName="label">
+  </mat-form-field>
+  <button color="primary" mat-raised-button type="submit" [disabled]="items.length > 9 || !form.valid">Add new item</button>
 </form>
 
-<warning-message *ngIf="!form.valid && !form.pristine">
-    Label is required
-  </warning-message>
+<mat-card *ngIf="!form.valid && !form.pristine">Label is required</mat-card>
 
 <warning-message *ngIf="items.length > 9">
   Maximum allowed items reached!
 </warning-message>
 
 <div style="margin-top: 10px;">
-  Number of items: <strong>{{ items.length }}</strong>
+  Number of items:
+  <strong>{{ items.length }}</strong>
 </div>
 
 <ul>

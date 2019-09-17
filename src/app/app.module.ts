@@ -1,8 +1,15 @@
+import  {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 import { WarningMessageComponent } from 'src/components/warning-message/warning-message.component';
 import { ArchivePageComponent } from 'src/pages/archive-page/archive-page.component';
@@ -41,6 +48,12 @@ const routes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatCardModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

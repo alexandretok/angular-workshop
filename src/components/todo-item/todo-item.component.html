@@ -1,6 +1,6 @@
 <li [class.checked]="item.status == 'DONE'">
   <label>
-    <input type="checkbox" [checked]="item.status == 'DONE'" (change)="onChange($event)">
-    {{ item.label }}
+      <mat-checkbox color="primary" [checked]="item.status == 'DONE'" (change)="onChange($event)">{{ item.label }}</mat-checkbox>
+    
   </label>
 </li>

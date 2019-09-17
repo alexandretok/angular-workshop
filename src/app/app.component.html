@@ -1,6 +1,12 @@
-<a [routerLink]="['/todo']">To-do</a>
-<a [routerLink]="['/archive']">Archive</a>
+<mat-toolbar>
+    <button mat-stroked-button color="primary" [routerLink]="['/todo']">To-do</button>
+    <button mat-stroked-button color="primary" [routerLink]="['/archive']">Archive</button>
+</mat-toolbar>
 
 <br>
 
-<router-outlet></router-outlet>
+<mat-card style="max-width: 90%; margin: auto;">
+
+    <router-outlet></router-outlet>
+
+</mat-card>

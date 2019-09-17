@@ -1,3 +1,13 @@
 ul {
   list-style-type: none;
 }
+
+button {
+  margin-left: 10px;
+}
+
+mat-card {
+  max-width: 20%;
+  margin-left: 10px;
+  color: red;
+}
