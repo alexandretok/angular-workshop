@@ -1,0 +1,27 @@
+[
+      {
+        "label": "Have lunch at Pingo Doce",
+        "value": 1,
+        "status": "DONE"
+      },
+      {
+        "label": "Learn french",
+        "value": 2,
+        "status": "TODO"
+      },
+      {
+        "label": "Stand up meeting",
+        "value": 3,
+        "status": "DONE"
+      },
+      {
+        "label": "Something else...",
+        "value": 4,
+        "status": "TODO"
+      },
+      {
+        "label": "Buy new water bottle (mine was stolen)",
+        "value": 5,
+        "status": "TODO"
+      }
+    ]
