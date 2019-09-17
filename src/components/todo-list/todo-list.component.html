@@ -1,8 +1,12 @@
 <h3>{{ listTitle }}</h3>
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <input type="text" ngModel name="label">
-  <button type="submit" [disabled]="items.length > 9">Add new item</button>
+  <input required type="text" ngModel name="label">
+  <button type="submit" [disabled]="items.length > 9 || !f.valid">Add new item</button>
+
+  <warning-message *ngIf="!f.valid && f.touched">
+    Label is required
+  </warning-message>
 </form>
 
 <warning-message *ngIf="items.length > 9">
