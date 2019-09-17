@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TodoService } from 'src/services/todo.service';
 import { ItemStatus } from 'src/models/item-status';
 import { Item } from 'src/models/item';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'todo-list',
@@ -15,15 +15,19 @@ export class TodoListComponent implements OnInit {
   newItem: string;
   items: Item[] = [];
 
+  form: FormGroup = new FormGroup({
+    label: new FormControl('', Validators.required)
+  });
+
   constructor(public todoService: TodoService) {}
   
-  onSubmit(form: NgForm) {
+  onSubmit() {
     this.todoService.addItem({
-      label: form.value.label,
+      label: this.form.value.label,
       value: this.todoService.getItems().length + 1,
       status: ItemStatus.TODO
     });
-    form.setValue({label: ""})
+    this.form.reset();
   }
   
   ngOnInit() {
